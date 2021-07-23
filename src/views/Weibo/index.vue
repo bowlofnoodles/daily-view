@@ -1,6 +1,6 @@
 <template>
   <a-table :columns="columns" :data-source="data">
-    <template #name="{ text }">
+    <template #rank="{ text }">
       <a>{{ text }}</a>
     </template>
     <template #customTitle>
@@ -41,9 +41,9 @@ import { getWeiboHotSpot } from '@/api';
 
 const columns = [
   {
-    dataIndex: 'name',
-    key: 'name',
-    slots: { title: 'customTitle', customRender: 'name' }
+    dataIndex: 'rank',
+    key: 'rank',
+    slots: { title: 'customTitle', customRender: 'rank' }
   },
   {
     title: 'Age',
