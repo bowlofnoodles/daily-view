@@ -74,6 +74,8 @@ export default defineComponent({
   .logo {
     height: 64px;
     margin-right: 16px;
+    display: flex;
+    align-items: center;
     img {
       height: 50%;
     }
