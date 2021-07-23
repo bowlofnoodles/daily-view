@@ -63,11 +63,13 @@ export default defineComponent({
   position: fixed;
   .logo {
     float: left;
-    height: 40px;
-    width: 40px;
+    line-height: 64px;
+    height: 64px;
     margin-right: 16px;
+    display: flex;
+    align-items: center;
     img {
-      height: 100%;
+      height: 70%;
     }
   }
   .menu {
