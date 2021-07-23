@@ -9,12 +9,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/weibo',
     name: 'Weibo',
-    component: () => import('@/views/weibo/index.vue')
+    component: () => import('@/views/weibo.vue')
   },
   {
     path: '/douban',
     name: 'Douban',
-    component: () => import('@/views/douban/index.vue')
+    component: () => import('@/views/douban.vue')
   }
 ];
 
