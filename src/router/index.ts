@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import Weibo from '@/views/Weibo/index.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -10,7 +9,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/weibo',
     name: 'Weibo',
-    component: Weibo
+    component: () => import('@/views/weibo/index.vue')
+  },
+  {
+    path: '/douban',
+    name: 'Douban',
+    component: () => import('@/views/douban/index.vue')
   }
 ];
 
