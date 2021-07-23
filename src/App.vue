@@ -1,9 +1,9 @@
 <template>
   <a-layout>
     <a-layout-header class="header">
-      <div class="logo">
+      <a class="logo" href="/">
         <img src="https://cdn.bowlofnoodles.top/img/noodles.png" />
-      </div>
+      </a>
       <a-menu
         theme="dark"
         mode="horizontal"
@@ -15,6 +15,9 @@
           {{ menu.title }}
         </a-menu-item>
       </a-menu>
+      <a href="https://github.com/bowlofnoodles/daily-view" target="_blank" class="github">
+        <GithubOutlined />
+      </a>
     </a-layout-header>
     <a-layout-content class="content">
       <router-view />
@@ -32,6 +35,7 @@ type MenuItem = {
 };
 import { defineComponent, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { GithubOutlined } from '@ant-design/icons-vue';
 
 export default defineComponent({
   setup() {
@@ -53,6 +57,9 @@ export default defineComponent({
       menuList,
       onMenuClick
     };
+  },
+  components: {
+    GithubOutlined
   }
 });
 </script>
@@ -61,19 +68,25 @@ export default defineComponent({
   width: 100%;
   z-index: 1;
   position: fixed;
+  align-items: center;
+  display: flex;
+  height: 64px;
   .logo {
-    float: left;
-    line-height: 64px;
     height: 64px;
     margin-right: 16px;
-    display: flex;
-    align-items: center;
     img {
-      height: 70%;
+      height: 50%;
     }
   }
   .menu {
-    line-height: 64px;
+    flex: 1;
+  }
+  .github {
+    /deep/ span {
+      margin-top: 10px;
+      font-size: 20px;
+      color: #1890ff;
+    }
   }
 }
 
