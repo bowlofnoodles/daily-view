@@ -1,4 +1,4 @@
-const SERVER_HOST = 'https://bowlofnoodles-common-apis.herokuapp.com';
+const SERVER_HOST = 'https://api.bowlofnoodles.top/common';
 
 export {
   SERVER_HOST
