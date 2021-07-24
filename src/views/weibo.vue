@@ -55,7 +55,7 @@ export default defineComponent({
         list.value = data.map(item => ({
           ...item,
           view: milliFormat(item.view),
-          className: iconClassMapping[item.iconText]
+          className: item.iconText ? iconClassMapping[item.iconText] || 'icon-txt-recommend' : ''
         }));
       } finally {
         loading.value = false;
@@ -79,49 +79,53 @@ export default defineComponent({
 </script>
 
 <style lang="less" scoped>
+@import '@/style/variable.less';
+
 .refresh {
   display: flex;
   justify-content: flex-end;
   padding-right: 20px;
   cursor: pointer;
-  /deep/ span {
+  :deep(span) {
     margin-top: 10px;
-    font-size: 20px;
-    color: #1890ff;
+    font-size: @font-size-big;
+    color: @primary-color;
   }
 }
   
 .list-item {
   padding: 10px;
   margin: 10px;
-  border: 1px solid #f0f0f0;
-  /deep/ .ant-list-item-meta-avatar {
+  border-bottom: 1px solid @border-color-base;
+  :deep(.ant-list-item-meta-avatar) {
     min-width: 40px;
-    color: #f26d5f;
-    svg {
-      font-size: 24px;
+    color: @gold-color;
+    span {
+      font-size: @font-size-big;
       margin-left: -6px;
     }
   }
 
   .icon-txt {
     display: inline-block;
-    line-height: 12px;
-    color: #fff;
+    line-height: @font-size-sm;
+    color: @white-color;
     border-radius: 4px;
-    text-align: center;
     padding: 4px;
     &.icon-txt-hot {
-      background: #ff9406;
+      background: @gold-6;
     }
     &.icon-txt-boom {
-      background: #bd0000;
+      background: @red-8;
     }
     &.icon-txt-boil {
-      background: #f86400;
+      background: @red-10;
     }
     &.icon-txt-new {
-      background: #ff3852;
+      background: @red-color;
+    }
+    &.icon-txt-recommend {
+      background: @blue-color;
     }
   }
 }

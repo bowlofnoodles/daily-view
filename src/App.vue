@@ -64,15 +64,20 @@ export default defineComponent({
 });
 </script>
 <style lang="less" scoped>
+@import '@/style/variable.less';
+
+@header-height: 64px;
+@footer-height: 40px;
+
 .header {
   width: 100%;
   z-index: 1;
   position: fixed;
   align-items: center;
   display: flex;
-  height: 64px;
+  height: @header-height;
   .logo {
-    height: 64px;
+    height: @header-height;
     margin-right: 16px;
     display: flex;
     align-items: center;
@@ -84,23 +89,23 @@ export default defineComponent({
     flex: 1;
   }
   .github {
-    /deep/ span {
+    :deep(span) {
       margin-top: 10px;
       font-size: 20px;
-      color: #1890ff;
+      color: @primary-color;
     }
   }
 }
 
 .content {
   padding: 0 50px;
-  margin-top: 64px;
-  min-height: ~"calc(100vh - 104px)";
+  margin-top: @header-height;
+  min-height: calc(~"100vh - @{header-height}");
 }
 
 .footer {
   text-align: center;
-  line-height: 40px;
+  line-height: @footer-height;
   padding: 0;
 }
 </style>
