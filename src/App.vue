@@ -2,7 +2,7 @@
   <a-layout>
     <a-layout-header class="header">
       <a class="logo" href="/">
-        <img src="https://cdn.bowlofnoodles.top/img/noodles.png" />
+        <img src="https://www.bowlofnoodles.top/noodles.png" />
       </a>
       <a-menu
         theme="dark"
